@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dead Domain → Link in Bio — Complete Beginner Guide | Murphy's Law AI</title>
+<meta name="description" content="Build your own link-in-bio page with Claude Code and host it free on GitHub Pages. The exact prompt, the DNS step everyone gets stuck on, and the certificate warning that isn't a real problem.">
+<meta property="og:title" content="Dead Domain → Link in Bio">
+<meta property="og:description" content="Linktree Pro is $24/mo. I pay $0. Here's the exact build.">
+<style>
+  :root{
+    --ink:#141210;
+    --ink2:#0E0D0C;
+    --paper:#EFEBE3;
+    --red:#FF4D3D;
+    --rule:rgba(20,18,16,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.65;
+  }
+  .cond{font-family:"Haettenschweiler","Arial Narrow",Impact,"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px}
+
+  /* hero */
+  header{
+    background:var(--ink2);
+    color:var(--paper);
+    padding:34px 22px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.55'/></svg>");
+    opacity:.05;pointer-events:none;
+  }
+  .wrap{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .back{
+    display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(239,235,227,.6);text-decoration:none;margin-bottom:26px;
+  }
+  .back:hover{color:var(--red)}
+  .tag{
+    display:inline-block;background:var(--red);color:var(--ink2);
+    font-size:11px;font-weight:800;letter-spacing:.2em;padding:4px 9px;border-radius:3px;margin-bottom:14px;
+  }
+  h1{font-size:clamp(34px,9vw,52px);line-height:.96;margin-bottom:16px}
+  h1 .r{color:var(--red)}
+  .sub{font-size:16px;line-height:1.55;color:rgba(239,235,227,.82)}
+  .sub b{color:var(--paper)}
+
+  /* article */
+  main{padding:40px 22px 70px}
+  main .wrap>*+*{margin-top:18px}
+  h2{font-size:clamp(26px,6.5vw,34px);line-height:1.05;margin-top:52px!important;padding-top:26px;border-top:2px solid var(--ink)}
+  h2 .r{color:var(--red)}
+  h3{font-size:19px;font-weight:700;margin-top:32px!important;letter-spacing:-.01em}
+  p,li{font-size:16.5px}
+  ol,ul{padding-left:22px}
+  li{margin-top:7px}
+  li>ul,li>ol{margin-top:7px}
+  strong{font-weight:700}
+  a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--red);text-decoration-thickness:2px}
+
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:14px;background:rgba(20,18,16,.075);padding:2px 5px;border-radius:3px;
+  }
+
+  .promptbox{position:relative;margin-top:18px}
+  pre{
+    background:var(--ink2);color:var(--paper);
+    border-radius:6px;padding:20px 18px 18px;
+    overflow-x:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13.5px;line-height:1.6;white-space:pre;
+  }
+  .copy{
+    position:absolute;top:10px;right:10px;
+    background:var(--red);color:var(--ink2);border:0;border-radius:3px;
+    font-size:10.5px;font-weight:800;letter-spacing:.14em;padding:6px 10px;cursor:pointer;
+  }
+  .copy:active{transform:translateY(1px)}
+
+  .callout{
+    border-left:3px solid var(--red);
+    background:rgba(255,77,61,.07);
+    padding:14px 16px;border-radius:0 4px 4px 0;
+    font-size:15.5px;
+  }
+  .callout b{display:block;margin-bottom:4px}
+
+  .tablewrap{overflow-x:auto;margin-top:18px}
+  table{border-collapse:collapse;width:100%;min-width:420px;font-size:15px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule)}
+  th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(20,18,16,.6)}
+  td:first-child,th:first-child{padding-left:0}
+
+  .fix{margin-top:14px}
+  .fix b{display:block}
+
+  footer{
+    background:var(--ink2);color:rgba(239,235,227,.7);
+    padding:40px 22px;text-align:center;font-size:14.5px;line-height:1.7;
+  }
+  footer a{color:var(--paper);text-decoration-color:var(--red)}
+  footer .law{color:var(--paper)}
+  .cta{
+    display:inline-block;margin-bottom:22px;
+    background:var(--red);color:var(--ink2);
+    text-decoration:none;font-weight:800;letter-spacing:.06em;
+    padding:14px 22px;border-radius:4px;font-size:15px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="/">← murphyslawai.com</a>
+    <div class="tag">FREE GUIDE</div>
+    <h1 class="cond">Dead domain → <span class="r">link in bio</span></h1>
+    <p class="sub">Linktree Pro is $24/mo. <b>I pay $0.</b><br>
+    The exact prompt, the free hosting, and the DNS bit everyone gets stuck on. No terminal, no coding, about 15 minutes.</p>
+  </div>
+</header>
+
+<main><div class="wrap">
+
+  <p>I did this with a domain from a blog I killed. <strong>You don't need a domain at all</strong> — that part is optional and marked as such.</p>
+
+  <h3>What you end up with</h3>
+  <p>A one-page site with your links on it, that you own, on hosting that is free forever. No monthly fee, no "upgrade to remove branding", no company changing its pricing on you.</p>
+
+  <h3>What you need</h3>
+  <ul>
+    <li>A free <strong>GitHub</strong> account → <a href="https://github.com">github.com</a> (this is the free hosting)</li>
+    <li>A free <strong>Claude</strong> account → <a href="https://claude.ai">claude.ai</a> (this writes the page)</li>
+    <li><em>Optional:</em> a domain you already own</li>
+  </ul>
+  <p>No credit card anywhere in this guide.</p>
+
+  <h2 class="cond">1 — Have Claude <span class="r">build the page</span></h2>
+  <p>Open <a href="https://claude.ai">claude.ai</a> and paste this. Fill in the brackets with your own stuff.</p>
+
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>Build me a link-in-bio page as ONE self-contained HTML file.
+
+About me: [one sentence — who you are and what you make]
+
+Links, in this order:
+1. [Label] — [URL] — [one line describing it]
+2. [Label] — [URL] — [one line describing it]
+3. [Label] — [URL] — [one line describing it]
+
+Style: [the vibe — e.g. dark, bold condensed headings, one accent color]
+Mobile-first — almost everyone opens this on a phone.
+
+Rules:
+- Everything inline. No external fonts, scripts, images or CDN links.
+- Big tap targets, high contrast, no horizontal scrolling.
+- Include a &lt;title&gt; and a meta description.
+
+Output only the HTML.</pre>
+  </div>
+
+  <p>Claude gives you a wall of code. <strong>Don't read it.</strong></p>
+  <p>Don't like how it looks? Don't rewrite the prompt — just say what's wrong: <code>make the cards bigger</code> · <code>darker background</code> · <code>the heading font is too thin</code> · <code>add my email at the bottom</code>. Three rounds of that beats one perfect prompt.</p>
+
+  <h3>Save it as a file</h3>
+  <ol>
+    <li>Click the copy button at the top of the code block</li>
+    <li>Open <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac), paste it</li>
+    <li>Save it as <code>index.html</code> — the name matters, don't rename it
+      <ul><li><em>TextEdit on Mac:</em> Format → Make Plain Text first, or it saves wrong</li></ul>
+    </li>
+    <li>Double-click the file to preview it in your browser</li>
+  </ol>
+  <p>Looks right? That file is your whole website.</p>
+
+  <h2 class="cond">2 — Put it online, <span class="r">free</span></h2>
+  <p>No terminal needed. All of this is in the browser.</p>
+
+  <h3>Create the place it lives</h3>
+  <ol>
+    <li>Go to <a href="https://github.com/new">github.com/new</a></li>
+    <li>Repository name: <code>links</code></li>
+    <li>Choose <strong>Public</strong> — Pages only works on public repos with a free account</li>
+    <li>Leave every checkbox unticked (no README, no .gitignore, no license)</li>
+    <li><strong>Create repository</strong></li>
+  </ol>
+
+  <h3>Upload your file</h3>
+  <ol>
+    <li>On the empty repo page, click <strong>uploading an existing file</strong></li>
+    <li>Drag in your <code>index.html</code></li>
+    <li><strong>Commit changes</strong></li>
+  </ol>
+
+  <h3>Turn on the hosting</h3>
+  <ol>
+    <li>In the repo → <strong>Settings</strong></li>
+    <li>Sidebar → <strong>Pages</strong></li>
+    <li>Source: <strong>Deploy from a branch</strong></li>
+    <li>Branch <strong>main</strong>, folder <strong>/ (root)</strong> → <strong>Save</strong></li>
+  </ol>
+  <p>Wait about a minute, refresh, and GitHub shows your live address: <code>https://YOURNAME.github.io/links</code></p>
+
+  <div class="callout">
+    <b>That's a working link in bio.</b>
+    You can stop here — it's free forever. Step 3 only changes what the address looks like.
+  </div>
+
+  <h2 class="cond">3 — <span class="r">Optional:</span> your own domain</h2>
+  <p>Skip this if you don't own one.</p>
+
+  <h3>Tell GitHub the domain</h3>
+  <p>Repo → <strong>Settings</strong> → <strong>Pages</strong> → <strong>Custom domain</strong> → type it → <strong>Save</strong>. GitHub adds a file called <code>CNAME</code> to your repo. That's supposed to happen.</p>
+
+  <h3>Point the domain at GitHub</h3>
+  <p>Go to wherever you bought the domain, find the <strong>DNS records</strong> screen, and add these five:</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Type</th><th>Host</th><th>Value</th></tr>
+    <tr><td>A</td><td>@</td><td>185.199.108.153</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.109.153</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.110.153</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.111.153</td></tr>
+    <tr><td>CNAME</td><td>www</td><td>YOURNAME.github.io.</td></tr>
+  </table>
+  </div>
+  <p>Delete any existing A record or parking/redirect record for <code>@</code> first, or they'll fight each other. Then wait — ten minutes is normal, a few hours happens.</p>
+
+  <h3>Force HTTPS</h3>
+  <p>Back in <strong>Settings → Pages</strong>, tick <strong>Enforce HTTPS</strong>. Greyed out? The certificate isn't ready. Come back in an hour — it appears on its own.</p>
+
+  <h2 class="cond">When it <span class="r">goes wrong</span></h2>
+
+  <div class="fix">
+    <b>"Your connection is not private" / certificate warning</b>
+    <p>The most common one, and almost never a real problem. Your router cached the domain's <em>old</em> address, so you're still landing on the previous server — whose certificate doesn't cover your domain. The rest of the world already sees the new site.</p>
+    <p>Check it on <strong>mobile data with Wi-Fi off</strong>. If it loads there, you're fine. <code>ipconfig /flushdns</code> usually won't help — the stale copy is in the router, not your PC. Restart the router or wait.</p>
+  </div>
+
+  <div class="fix">
+    <b>404 after enabling Pages</b>
+    <p>The file has to be named exactly <code>index.html</code> and sit at the top level of the repo, not inside a folder.</p>
+  </div>
+
+  <div class="fix">
+    <b>Changes don't show up</b>
+    <p>GitHub rebuilds in about a minute, then your browser caches it. Hard refresh: Ctrl+Shift+R (Cmd+Shift+R on Mac).</p>
+  </div>
+
+  <div class="fix">
+    <b>Custom domain box keeps emptying itself</b>
+    <p>DNS isn't pointing at GitHub yet. Finish the DNS step, wait, then set it again.</p>
+  </div>
+
+  <h2 class="cond">Why <span class="r">bother</span></h2>
+  <p>Rented link pages take a cut of your attention: their branding on your page, their upsell to your visitors, their pricing decisions on your budget.</p>
+  <p>The page you came from runs on a domain from a blog that failed — Google rejected it, the hosting lapsed, I killed the project. The domain had ten months left on it. Now it's the front door of everything I make.</p>
+  <p><strong>If it can go wrong, it will. Sometimes it leaves you a part you can use.</strong></p>
+
+</div></main>
+
+<footer>
+  <div class="wrap">
+    <a class="cta" href="/">See the page this guide built →</a>
+    <p>Stuck? DM me which step you're on and what it said. I read every one.</p>
+    <p style="margin-top:14px">Made in Claude Code by <a href="https://www.instagram.com/murphysai/">@murphysai</a><br>
+    <span class="law">If it can go wrong, it will</span> — I just automate it back. 🖤</p>
+  </div>
+</footer>
+
+<script>
+function cp(btn){
+  var t = btn.parentElement.querySelector('pre').innerText;
+  navigator.clipboard.writeText(t).then(function(){
+    var o = btn.textContent; btn.textContent = 'COPIED';
+    setTimeout(function(){ btn.textContent = o; }, 1600);
+  });
+}
+</script>
+</body>
+</html>
