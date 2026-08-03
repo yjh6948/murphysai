@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 5 Illegal Claude Skills — Complete Beginner Guide | Murphy's Law AI</title>
+<meta name="description" content="Five copy-paste prompts that make Claude actually build things — screenshots into working apps, auto-captioned video, a real app in an afternoon. Written for total beginners.">
+<meta property="og:title" content="The 5 Illegal Claude Skills">
+<meta property="og:description" content="Five prompts that make AI do the work. Copy, paste, go.">
+<link rel="stylesheet" href="/g.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="/">← murphyslawai.com</a>
+    <div class="tag">FREE GUIDE</div>
+    <h1 class="cond">The 5 <span class="r">illegal</span> Claude skills</h1>
+    <p class="sub">Five things AI does that feel borderline illegal — <b>with the exact words to type.</b><br>
+    No coding. No paid tools. If you can copy and paste, you can do all five.</p>
+  </div>
+</header>
+
+<main><div class="wrap">
+
+  <p>I'll walk you through the first one slowly, then the rest go fast.</p>
+
+  <h3>Before you start (2 minutes, one time)</h3>
+  <p><strong>You need one thing: a free Claude account.</strong> Go to <a href="https://claude.ai">claude.ai</a>, sign up with email or Google, and you're in a chat box. That chat box is all you need for skills 1, 2, 4 and 5.</p>
+
+  <div class="callout">
+    <b>What about "Claude Code"?</b>
+    You'll see me use it on Instagram. Same AI, but it lives on your computer and can create and save files for you instead of just showing you text. Worth it later. <strong>You don't need it today</strong> — I'll mark the one spot where it makes life much easier.
+  </div>
+
+  <h3>How to use a prompt from this guide</h3>
+  <p>Click the copy button on the grey box → paste it into Claude → where it says <code>[like this]</code>, put your own thing in (or attach your file) → hit enter. That's the whole loop. Every skill below is that same loop with different words.</p>
+
+  <h2 class="cond">1 — Screenshot → <span class="r">working app</span></h2>
+  <p><strong>What it does:</strong> you give Claude a picture of any app or website screen, and it builds you a real, clickable version you own.</p>
+  <p><strong>When I use it:</strong> I see a nice pricing page or dashboard layout, and instead of describing it to someone, I just rebuild it.</p>
+
+  <h3>Step A — ask for it</h3>
+  <p>Take a screenshot of any interface — a website, an app screen, even a photo of a sketch on paper. Open Claude, <strong>attach the image</strong> (paperclip icon), paste this, hit enter:</p>
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>Here's a screenshot of a UI.
+
+Rebuild it as ONE self-contained HTML file — working buttons,
+clean modern CSS, responsive.
+
+Output only the HTML, then tell me how to open it.</pre>
+  </div>
+  <p>Claude writes a wall of code. <strong>Don't read it.</strong></p>
+
+  <h3>Step B — turn the code into a real file</h3>
+  <ol>
+    <li>Click the copy button at the top of that code block</li>
+    <li>Open <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac) and paste it</li>
+    <li>Save it as <code>test.html</code> — the <code>.html</code> part is what matters
+      <ul><li><em>TextEdit on Mac:</em> Format → Make Plain Text first, or it saves wrong</li></ul>
+    </li>
+    <li>Find the file and <strong>double-click it</strong></li>
+  </ol>
+  <p>It opens in your browser. That's your app — not a picture. You can click the buttons. Send the file back to Claude and say <em>"make the header dark"</em> and it'll change it.</p>
+
+  <h3>When it goes wrong</h3>
+  <div class="fix"><b>The file opens as text instead of a page</b><p>You saved it as <code>.txt</code>. Rename it so it ends in <code>.html</code>.</p></div>
+  <div class="fix"><b>It looks nothing like the screenshot</b><p>Say: <code>Closer to the screenshot please. Match the spacing, colors and font sizes exactly.</code> It gets better every round. Mine took three tries the first time.</p></div>
+  <div class="fix"><b>It stops halfway through the code</b><p>Say <code>continue</code> — it picks up where it left off.</p></div>
+
+  <h2 class="cond">2 — Any website → <span class="r">clean code you own</span></h2>
+  <p><strong>What it does:</strong> takes a page you like and hands you a stripped-down, editable version.</p>
+  <p><strong>When I use it:</strong> I find a landing page with a structure that works, and I want it as a starting template instead of staring at a blank screen.</p>
+
+  <h3>Step A — ask for it</h3>
+  <p>Copy the page address. (Or open it, select everything with Ctrl+A / Cmd+A, and copy that.) Then:</p>
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>Here's a web page: [paste the URL or the page text here]
+
+Rebuild it as one clean, self-contained HTML file I can edit:
+inline the CSS, remove trackers and clutter, keep the structure
+and the copy.
+
+Output only the HTML.</pre>
+  </div>
+
+  <h3>Step B — same as before</h3>
+  <p>Copy the code → Notepad → save as <code>something.html</code> → double-click. Now say <code>replace all the text with copy for [your thing]</code> and you have your own page.</p>
+
+  <h3>When it goes wrong</h3>
+  <div class="fix"><b>Claude says it can't open the link</b><p>Don't paste the address. Open the page, select everything, copy, and paste the actual text in.</p></div>
+  <div class="fix"><b>Images are missing</b><p>Expected — the images live on their server, not yours. Ask: <code>replace the images with plain colored placeholder boxes.</code></p></div>
+
+  <div class="callout">
+    <b>A word on this one</b>
+    Use it for structure and inspiration, not to copy someone's page word for word and put your name on it. Their words are theirs.
+  </div>
+
+  <h2 class="cond">3 — <span class="r">Auto-caption</span> a video</h2>
+
+  <div class="callout">
+    <b>Honest warning</b>
+    This is the hardest one here. The other four are pure copy-paste. This one installs software on your computer and takes about 20 minutes the first time. <strong>Skip it if you're not in the mood</strong> — skills 4 and 5 are easier and just as useful.
+  </div>
+
+  <p><strong>What it does:</strong> you drop in a raw video, you get it back with captions burned on.</p>
+  <p><strong>This is the one where Claude Code earns its keep.</strong> In the free chat, Claude can only <em>tell you</em> the commands to run. In Claude Code, it runs them, sees the errors, and fixes them itself. Big difference when something breaks — and something will break.</p>
+
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>Write me a script that takes a video file, transcribes it with
+Whisper, and burns clean, styled captions onto it using ffmpeg.
+
+I'm on [Windows / Mac] and I've never used a terminal before.
+Give me the exact commands to install everything and run it,
+and tell me what each command does in one line.</pre>
+  </div>
+  <p>Then follow its instructions one line at a time.</p>
+
+  <h3>When it goes wrong</h3>
+  <p>It will. Mine did.</p>
+  <div class="fix"><b>A command says "not found"</b><p>Paste the exact error back to Claude and say <code>I got this error, what now?</code> That's the whole debugging technique. It works better than you'd think.</p></div>
+  <div class="fix"><b>The install fails halfway</b><p>Tell Claude which step failed and what it said. Don't start over.</p></div>
+  <div class="fix"><b>Your file path has spaces or non-English characters</b><p>This breaks these tools constantly. Move the video to a simple folder like <code>C:\videos\</code> and rename it <code>test.mp4</code>. I lost an hour to this exact thing.</p></div>
+
+  <h2 class="cond">4 — Notes on <span class="r">autopilot</span></h2>
+  <p><strong>What it does:</strong> any article, PDF, or report becomes something you'll actually read.</p>
+  <p><strong>When I use it:</strong> every time someone sends me a 3,000-word thing and I need the point in 30 seconds.</p>
+
+  <p>Attach the PDF, or paste the article text, then:</p>
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>Here's an article.
+
+Give me: a 3-line summary, the 5 key takeaways as bullets,
+and any action items.
+
+Skimmable. No fluff.</pre>
+  </div>
+
+  <h3>Level it up</h3>
+  <ul>
+    <li><strong>Three at once:</strong> attach three articles and add <code>what's the through-line between these?</code> — this is where it stops being a summarizer and starts being useful</li>
+    <li><strong>Make it stick:</strong> add <code>now quiz me on it with 5 questions, one at a time</code></li>
+    <li><strong>Keep your voice:</strong> add <code>write it the way I'd explain it to a friend, not like a report</code></li>
+  </ul>
+
+  <h3>When it goes wrong</h3>
+  <div class="fix"><b>The summary is vague mush</b><p>The text didn't come through. Check that your paste included the article body and not just a cookie banner.</p></div>
+  <div class="fix"><b>It's too long anyway</b><p>Add <code>hard limit: 100 words total.</code> Give it a number and it obeys.</p></div>
+
+  <h2 class="cond">5 — A real app in an <span class="r">afternoon</span></h2>
+  <p><strong>What it does:</strong> an actual working tool, not a demo. Same day.</p>
+  <p><strong>When I use it:</strong> any time I catch myself doing the same annoying thing manually twice.</p>
+
+  <div class="promptbox">
+    <button class="copy" onclick="cp(this)">COPY</button>
+<pre>I want to build [describe your idea in one plain sentence]
+as a small web app.
+
+Act as my engineer:
+1) ask me 3 clarifying questions,
+2) propose the simplest stack,
+3) build it file by file with tests,
+4) tell me exactly how to run it.
+
+Start now.</pre>
+  </div>
+
+  <p>Then <strong>answer its three questions honestly.</strong> This step is the whole trick. People skip it, get something generic, and decide AI doesn't work.</p>
+
+  <h3>Ideas that actually work as a first build</h3>
+  <ul>
+    <li>a tip calculator that splits by how much each person drank</li>
+    <li>a page that turns your reading list into a printable checklist</li>
+    <li>a countdown to a date that you can send someone as a link</li>
+    <li>a form that turns client answers into a formatted brief</li>
+  </ul>
+
+  <h3>The one rule</h3>
+  <p><strong>Keep version one tiny.</strong> Ship something that does one thing. Then add one feature. Every person I've watched fail at this asked for their whole dream app in the first message and got a mess back.</p>
+
+  <h3>When it goes wrong</h3>
+  <div class="fix"><b>It gave you 6 files and you don't know where they go</b><p>Say <code>I'm a beginner. Combine everything into ONE html file I can just double-click.</code></p></div>
+  <div class="fix"><b>Something's broken and you can't tell what</b><p>Open the page, right-click → Inspect → Console tab, copy the red text, paste it to Claude. That red text is the answer.</p></div>
+
+  <h2 class="cond">The technique <span class="r">underneath</span> all five</h2>
+  <p>You may have noticed the prompts have a shape:</p>
+  <p><strong>Here's my thing → do exactly this → give it to me in this format.</strong></p>
+  <p>That's it. That's the skill. When a prompt of your own doesn't work, it's almost always missing the third part — you told it what to do but not what you wanted back.</p>
+  <p>And when the first answer is wrong, don't rewrite the prompt from scratch. Just tell it what's wrong. <code>Too long.</code> <code>Closer to the screenshot.</code> <code>I'm a beginner, simpler.</code> Three rounds of that beats one perfect prompt.</p>
+
+  <a class="bigcta" href="/domain/">
+    <div class="t">Next: build your own link page →</div>
+    <div class="d">Claude Code + free hosting. The one I use, on a domain from a project that failed.</div>
+  </a>
+
+</div></main>
+
+<footer>
+  <div class="wrap">
+    <a class="cta" href="/">Grab the other free packs →</a>
+    <p>Stuck? DM me which number you're on and what it said. I read every one.</p>
+    <p style="margin-top:14px">Made in Claude Code by <a href="https://www.instagram.com/murphysai/">@murphysai</a><br>
+    <span class="law">If it can go wrong, it will</span> — I just automate it back. 🖤</p>
+  </div>
+</footer>
+
+<script src="/g.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The iPhone Back-Tap Trick — Build All 5 Shortcuts | Murphy's Law AI</title>
+<meta name="description" content="Double-tap the back of your iPhone and it does a task for you. Summarize a screen, translate it, start focus mode. Free, no coding, about 15 minutes.">
+<meta property="og:title" content="The iPhone Back-Tap Trick">
+<meta property="og:description" content="Run shortcuts by tapping the back of your phone. All 5, step by step.">
+<link rel="stylesheet" href="/g.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="/">← murphyslawai.com</a>
+    <div class="tag">FREE GUIDE</div>
+    <h1 class="cond">The iPhone <span class="r">Back-Tap</span> trick</h1>
+    <p class="sub">Turn your iPhone into a magic wand: <b>double-tap the back → it does a task for you.</b><br>
+    Summarize an article, translate a screen, start focus mode. All free, no coding, about 15 minutes.</p>
+  </div>
+</header>
+
+<main><div class="wrap">
+
+  <p>This guide assumes you have <strong>never opened the Shortcuts app before</strong> — every tap is spelled out.</p>
+
+  <h3>Two things you need to know first</h3>
+  <p><strong>What are "Shortcuts"?</strong> A <strong>free Apple app already on your iPhone.</strong> It chains small actions into a one-tap task. Think Lego: each block is an action (take a screenshot, translate text…), and they run top to bottom.</p>
+  <p><strong>What is "Back Tap"?</strong> A hidden iPhone feature — <strong>tapping the back of your phone</strong> (double or triple tap) can launch a shortcut. No app icon, no searching.</p>
+
+  <div class="callout">
+    <b>Will it work on my phone?</b>
+    iPhone 8 and newer, iOS 14+. You do <strong>not</strong> need the newest iPhone.
+  </div>
+
+  <h2 class="cond">30-second <span class="r">crash course</span></h2>
+  <ol>
+    <li><strong>Find the Shortcuts app:</strong> swipe down on your Home Screen, type <code>Shortcuts</code>, tap it. (Deleted it? Re-download free from the App Store.)</li>
+    <li><strong>Make a new one:</strong> tap the <strong>＋</strong> in the top-right corner.</li>
+    <li><strong>Add actions:</strong> tap <strong>Add Action</strong> → a search bar appears → type the action's name → tap it. Repeat to stack more. They run in order, top to bottom.</li>
+    <li><strong>Variables:</strong> a variable is the <em>result of a previous step</em>. When you see a chip like <em>Shortcut Input</em> or <em>Clipboard</em> in a text box, that's a variable. Insert one with the <strong>variable button</strong> just above the keyboard. This is how a result gets passed into the next step.</li>
+    <li><strong>Name &amp; save:</strong> tap the shortcut name at the top → <strong>Rename</strong> → type a name → <strong>Done</strong>.</li>
+  </ol>
+  <p>That's everything. Now let's build the five.</p>
+
+  <h2 class="cond">1 — Summarize the <span class="r">screen</span> 🧠</h2>
+  <p><em>Long article? Double-tap → a clean 3-bullet summary.</em></p>
+  <p>Needs the <strong>free ChatGPT app</strong> installed so its action shows up. No ChatGPT? Skip to #2.</p>
+  <ol>
+    <li>Tap <strong>＋</strong> to start a new shortcut</li>
+    <li>Add <strong>Take Screenshot</strong></li>
+    <li>Add <strong>Extract Text from Image</strong> — can't find it? Search <code>text</code> and pick the one that reads text out of a picture. Its input should be the <strong>Screenshot</strong> from step 2</li>
+    <li>Add <strong>Ask ChatGPT</strong>. In its text box type <code>Summarize this in 3 short bullets in English:</code> then insert the <strong>Extracted Text</strong> variable right after it</li>
+    <li>Add <strong>Make Rich Text from Markdown</strong> (input = the ChatGPT answer). This makes the result look clean instead of messy</li>
+    <li>Add <strong>Quick Look</strong></li>
+    <li>Rename it <strong>Summarize</strong></li>
+  </ol>
+  <p><strong>Test it:</strong> open any article, then tap <strong>▶</strong> at the bottom of the shortcut. A tidy summary should pop up.</p>
+
+  <h2 class="cond">2 — <span class="r">Translate</span> the screen 🌐</h2>
+  <p><em>See another language? Double-tap → read it in yours.</em> Fully built-in, no app needed.</p>
+  <ol>
+    <li>New shortcut (<strong>＋</strong>) → add <strong>Take Screenshot</strong></li>
+    <li>Add <strong>Extract Text from Image</strong> (input = Screenshot)</li>
+    <li>Add <strong>Translate Text</strong> → set the "to" language to yours (input = Extracted Text)</li>
+    <li>Add <strong>Show Result</strong></li>
+    <li>Rename it <strong>Translate</strong></li>
+  </ol>
+
+  <h2 class="cond">3 — <span class="r">Deep Work</span> mode 🎯</h2>
+  <p><em>One tap = distraction-free work session.</em></p>
+  <ol>
+    <li>New shortcut → add <strong>Set Focus</strong> → choose <strong>Do Not Disturb → Turn On</strong></li>
+    <li>Add <strong>Set Low Power Mode → On</strong></li>
+    <li>Add <strong>Start Timer → 25 minutes</strong></li>
+    <li><em>(Optional)</em> Add <strong>Play</strong> → pick a focus playlist</li>
+    <li>Rename it <strong>Deep Work</strong></li>
+  </ol>
+
+  <h2 class="cond">4 — Get me <span class="r">home</span> 🏠</h2>
+  <p><em>Leaving somewhere? Double-tap → texts your ETA and opens directions.</em></p>
+  <ol>
+    <li>New shortcut → add <strong>Get Travel Time</strong> → destination <strong>Home</strong>, by car</li>
+    <li>Add <strong>Send Message</strong> → type <code>Heading home, ~</code> then insert the <strong>Travel Time</strong> variable, then <code> out</code> → choose who to text</li>
+    <li>Add <strong>Show Directions</strong> → Home</li>
+    <li>Rename it <strong>Get Me Home</strong></li>
+  </ol>
+  <p>First run may ask for location permission — allow it.</p>
+
+  <h2 class="cond">5 — Capture an <span class="r">idea</span> 💡</h2>
+  <p><em>Idea hits? Double-tap, say it out loud, it's saved.</em></p>
+  <ol>
+    <li>New shortcut → add <strong>Dictate Text</strong> (this listens to your voice)</li>
+    <li>Add <strong>Append to Note</strong> → pick or create a note called <strong>Ideas</strong></li>
+    <li>Rename it <strong>Capture Idea</strong></li>
+  </ol>
+
+  <h2 class="cond">Now put them on your <span class="r">Back Tap</span></h2>
+  <p>Back Tap has <strong>two slots</strong>: Double Tap and Triple Tap. Pick your <strong>two favorites</strong> to launch by tapping the back. Run the other three anytime from inside the Shortcuts app.</p>
+  <ol>
+    <li>Open <strong>Settings</strong></li>
+    <li>Go to <strong>Accessibility → Touch → Back Tap</strong></li>
+    <li>Tap <strong>Double Tap</strong> → choose a shortcut (e.g. <strong>Summarize</strong>)</li>
+    <li>Tap <strong>Triple Tap</strong> → choose another (e.g. <strong>Translate</strong>)</li>
+  </ol>
+  <p><strong>Done.</strong> Tap the back of your phone twice and your shortcut runs. 🖤</p>
+  <p><em>Want all 5 on a single tap? That needs an extra "menu" step — DM me MENU and I'll send it.</em></p>
+
+  <h2 class="cond">If something <span class="r">isn't working</span></h2>
+  <div class="fix"><b>An action isn't in the list</b><p>Names change a bit by iOS version — search a keyword (<code>text</code>, <code>translate</code>, <code>focus</code>, <code>timer</code>).</p></div>
+  <div class="fix"><b>"Ask ChatGPT" is missing</b><p>Install the free ChatGPT app first, then reopen Shortcuts.</p></div>
+  <div class="fix"><b>Result shows as code or looks messy</b><p>Make sure step 5 is <strong>Make Rich Text from Markdown</strong>, placed <em>before</em> Quick Look.</p></div>
+  <div class="fix"><b>Nothing happens on back tap</b><p>Recheck <strong>Settings → Accessibility → Touch → Back Tap</strong> is set to your shortcut.</p></div>
+
+  <a class="bigcta" href="/skills/">
+    <div class="t">Next: the 5 illegal Claude skills →</div>
+    <div class="d">Five copy-paste prompts that make AI actually build things.</div>
+  </a>
+
+</div></main>
+
+<footer>
+  <div class="wrap">
+    <a class="cta" href="/">Grab the other free packs →</a>
+    <p>Stuck? DM me which step you're on and what it said. I read every one.</p>
+    <p style="margin-top:14px">Made by <a href="https://www.instagram.com/murphysai/">@murphysai</a> · Murphy's Law AI<br>
+    <span class="law">If it can go wrong, it will</span> — I just automate it back. 🖤</p>
+  </div>
+</footer>
+
+</body>
+</html>
